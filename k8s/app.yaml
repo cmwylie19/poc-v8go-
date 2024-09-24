@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: controller
+  name: controller
+spec:
+  containers:
+  - image: poc-v8go
+    name: controller
+    #command: ["sh", "-c","sleep 9999" ]
+    command: ["sh", "-c","./interpreter/interpreter controller.js module.js random-hash"]
+    imagePullPolicy: Never
+    volumeMounts:
+    - name: module
+      mountPath: /app
+      readOnly: true
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    env: 
+    - name: "NODE_TLS_REJECT_UNAUTHORIZED"
+      value: "0"
+  volumes:
+  - name: module
+    configMap:
+      name: module
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+--- 
+apiVersion: v1
+data:
+  module.js: |
+    export default function hello() {
+      log("Hi World");
+    }
+kind: ConfigMap
+metadata:
+  name: module
