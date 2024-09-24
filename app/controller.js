@@ -5,14 +5,14 @@
   }
 
   try {
-    log('Running program:', jsProgramPath);
+    log('Running program: ' + jsProgramPath);
     if (typeof hello === 'function') {
       hello()
     } else {
       log('The specified program does not export a default function.');
     }
 
-    log('Hash received:', hash);
+    log('Hash received: ' + hash);
   } catch (err) {
     log('Error running the program:', err.message);
   }
