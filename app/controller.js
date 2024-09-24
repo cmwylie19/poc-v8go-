@@ -6,7 +6,6 @@
 
   try {
     log('Running program:', jsProgramPath);
-  
     if (typeof hello === 'function') {
       hello()
     } else {

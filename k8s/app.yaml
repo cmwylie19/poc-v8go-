@@ -9,11 +9,11 @@ spec:
   - image: poc-v8go
     name: controller
     #command: ["sh", "-c","sleep 9999" ]
-    command: ["sh", "-c","./interpreter/interpreter controller.js module.js random-hash"]
+    command: ["sh", "-c","./interpreter controller.js load/module.js random-hash"]
     imagePullPolicy: Never
     volumeMounts:
     - name: module
-      mountPath: /app
+      mountPath: /app/load
       readOnly: true
     resources:
       limits:
@@ -36,7 +36,7 @@ status: {}
 apiVersion: v1
 data:
   module.js: |
-    export default function hello() {
+    function hello() {
       log("Hi World");
     }
 kind: ConfigMap
