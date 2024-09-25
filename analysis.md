@@ -11,7 +11,7 @@
 The Pepr Team preference is not to use V8go for the following reasons:
 - v8go is not a drop-in replacement, it does not offer the Runtime Environment of Node.js and we would have to backfill the missing pieces in Go.
 - Since we have no way to know what the module author would want to use in the npm/node ecosystem, we would have to backfill everything. (Since missing features could cause instability or we could have bugs in our Go implementation)
-- Support for the native Node.js features like setTimeout, setInterval, and native console logging would have to be reimplemented in Go for the Store
+- Support for the native Node.js features like setTimeout, setInterval, and native console logging would have to be reimplemented in Go for the Store, existing KFC Informer, OnSchedule, and the crypto lib for decompressing the module.
 - v8go is less supported in comparison to native Kubernetes sigsmachiner go libraries.
 
 Our chosen alternative would be something like the [Watch Informer](https://github.com/cmwylie19/watch-informer) which would run as a sidecar to the controller and would be responsible for watching the resources in the cluster. This would allow us to:
