@@ -1,4 +1,9 @@
 (async function() {
+    // setTimeout(() => {
+    //   log("Timeout called")
+    // }, 1000);
+    log(Object.keys(console).join(', '));
+
   if (!jsProgramPath || !hash) {
     log('Usage: controller.js <module-path> <hash>');
     return;

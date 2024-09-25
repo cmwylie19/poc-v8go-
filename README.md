@@ -7,6 +7,7 @@
   - [Introduction](#introduction)
   - [Build](#fast)
   - [Debugging](#debugging)
+  - [Pros and Cons](#analysis)
 
 
 ## Introduction
@@ -47,8 +48,3 @@ Exec into the controller pod
 make k8s-exec
 ```
 
-## Analysis
-
-( If most of the work is done in javascript (for example crypto or any other heavy calculations) you are definitely better off with V8.)[https://github.com/grafana/sobek?tab=readme-ov-file#why-would-i-want-to-use-it-over-a-v8-wrapper]
-
-- Can't seem to easily get logs
