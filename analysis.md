@@ -61,3 +61,9 @@ Quick Note on Sobek:
 The promise that Pepr gives to Developers is to harness the power of power of a complete programming language to react to changes in the cluster. TypeScript is a full featured, expressive, storngly typed and flexible, however, we would loose that power should be switch to running in a Go binary as a side-effect to changing the Runtime Environment.
 
 The Runtime Environment (like NodeJS or Chrome) is responsible for providing the functionality of Event Loop. As we know that JS engines are capable of executing only one task at a time (or single-threaded), there has to be some different entity that manages providing the JS engine with the next task to execute.
+
+
+- Supportability
+- freedom
+- longer term ocntract between pepr rules writers and pepr 
+- development time
